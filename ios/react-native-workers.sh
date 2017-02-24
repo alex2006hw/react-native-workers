@@ -71,13 +71,13 @@ type $NODE_BINARY >/dev/null 2>&1 || nodejs_not_found
 # Print commands before executing them (useful for troubleshooting)
 set -x
 
-# change src/workers to match the location of your workers
+# change workers to match the location of your workers
 DEST=$CONFIGURATION_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/workers
 
 echo $DEST
 mkdir -p $DEST
 
-# Get list of entry files (change Pointlook/workers/*Worker.js to match the location and filename pattern of your workers)
+# Get list of entry files (change workers/*Worker.js to match the location and filename pattern of your workers)
 for ENTRY_FILE in ${1:-workers/*Worker.js}
 do
   echo "ENTRY_FILE: ${ENTRY_FILE}"
